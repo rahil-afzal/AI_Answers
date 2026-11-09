@@ -1,0 +1,43 @@
+[
+  {
+    "id": "lagrangian_and_rules",
+    "goal": "Define the Lagrangian and derive the Feynman rules for the massless propagator and the 4-point vertex, explicitly tracking all factors of $i$.",
+    "depends_on": []
+  },
+  {
+    "id": "tree_amplitude",
+    "goal": "Construct the tree-level amplitude $\\mathcal{A}_{tree}$ by summing the s-, t-, and u-channel diagrams using the derived vertex rule.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "loop_diagrams_and_integrals",
+    "goal": "Identify the three 1-loop topologies (s-, t-, u-channel bubbles), determine their symmetry factors, and write the formal expressions for the unrenormalized loop integrals, explicitly tracking all factors of $i$.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "scalar_integral_evaluation",
+    "goal": "Evaluate the massless 1-loop scalar bubble integral in $d = 4 - 2\\epsilon$ dimensions using dimensional regularization, explicitly applying the Feynman $i0$ prescription to determine the boundary values in the physical s-channel region.",
+    "depends_on": [
+      "loop_diagrams_and_integrals"
+    ]
+  },
+  {
+    "id": "renormalization_and_beta",
+    "goal": "Define the $\\overline{\\text{MS}}$ counterterms to absorb the $1/\\epsilon$ poles, compute the renormalized 1-loop amplitude $\\mathcal{A}_{loop}$, and extract the beta function $\\beta_{c_4}$.",
+    "depends_on": [
+      "tree_amplitude",
+      "scalar_integral_evaluation"
+    ]
+  },
+  {
+    "id": "final_compilation",
+    "goal": "Compile the final analytical expressions for $\\mathcal{A}_{tree}$, $\\mathcal{A}_{loop}$, and $\\beta_{c_4}$ into the required fenced block format.",
+    "depends_on": [
+      "renormalization_and_beta"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "task": "phi4_dim4",
+  "workflow": "autonomous_stepwise_audit",
+  "derivation_model": "openai-compatible:qwen/qwen-3.7-plus",
+  "audit_model": "openai-compatible:moonshotai/kimi-k3.1-pro",
+  "derivation_client": {
+    "name": "openai-compatible:qwen/qwen-3.7-plus",
+    "provider": "openai-compatible",
+    "model": "qwen/qwen-3.7-plus",
+    "base_url": "https://tokens.bd/v1",
+    "temperature": 0.2,
+    "timeout_s": 600.0,
+    "stream": true,
+    "max_tokens": 4096
+  },
+  "audit_client": {
+    "name": "openai-compatible:moonshotai/kimi-k3.1-pro",
+    "provider": "openai-compatible",
+    "model": "moonshotai/kimi-k3.1-pro",
+    "base_url": "https://tokens.bd/v1",
+    "temperature": 0.2,
+    "timeout_s": 600.0,
+    "stream": true,
+    "max_tokens": 4096
+  },
+  "max_step_retries": 5,
+  "streaming": true
+}

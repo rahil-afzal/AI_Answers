@@ -1,0 +1,57 @@
+[
+  {
+    "id": "lagrangian_and_rules",
+    "goal": "Establish the Lagrangian $\\mathcal{L} = \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi + c_4 \\frac{\\phi^4}{4!}$ and derive the Feynman rules for the massless propagator and the 4-point vertex.",
+    "depends_on": []
+  },
+  {
+    "id": "tree_amplitude",
+    "goal": "Construct the tree-level diagrams for $\\phi \\phi \\to \\phi \\phi$ and compute the order $c_4$ amplitude $\\mathcal{A}_{\\text{tree}}$ in terms of Mandelstam variables $s, t, u$.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "one_loop_topologies",
+    "goal": "Identify all one-loop topologies (s, t, u channel bubbles) at order $c_4^2$, determining their symmetry factors and overall vertex factors.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "loop_integrals",
+    "goal": "Formulate the loop integrals for the one-loop diagrams, explicitly separating the denominator-only scalar bubble integral from the overall factors of $i$ and coupling constants.",
+    "depends_on": [
+      "one_loop_topologies"
+    ]
+  },
+  {
+    "id": "scalar_integral_eval",
+    "goal": "Evaluate the scalar bubble integral in $d = 4 - 2\\epsilon$ dimensions using Feynman parameterization, isolating the $1/\\epsilon$ ultraviolet poles.",
+    "depends_on": [
+      "loop_integrals"
+    ]
+  },
+  {
+    "id": "renormalization",
+    "goal": "Apply $\\overline{\\text{MS}}$ renormalization at scale $\\mu$ to determine the counterterm for $c_4$ and compute the finite renormalized one-loop amplitude $\\mathcal{A}_{\\text{loop}}$.",
+    "depends_on": [
+      "tree_amplitude",
+      "scalar_integral_eval"
+    ]
+  },
+  {
+    "id": "analytic_structure",
+    "goal": "Analyze the analytic structure of the renormalized amplitude, applying the $s \\to s + i0$ prescription and evaluating the boundary values for the physical s-channel region where $t$ and $u$ are negative real.",
+    "depends_on": [
+      "renormalization"
+    ]
+  },
+  {
+    "id": "final_compilation",
+    "goal": "Compile the final expressions for $\\mathcal{A}_{\\text{tree}}$, $\\mathcal{A}_{\\text{loop}}$, and the beta function $\\beta_{c_4}$ into a fenced `final` block using safe arithmetic syntax.",
+    "depends_on": [
+      "analytic_structure"
+    ]
+  }
+]
