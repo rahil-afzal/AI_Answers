@@ -1,0 +1,64 @@
+[
+  {
+    "id": "lagrangian_and_rules",
+    "goal": "Write the explicit Lagrangian, derive the momentum-space Feynman rules for the propagator and the 4-point vertex, and state the symmetry factor for the 1-loop diagrams.",
+    "depends_on": []
+  },
+  {
+    "id": "tree_amplitude",
+    "goal": "Identify the tree-level diagrams for the s, t, and u channels and compute the tree-level amplitude A_tree.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "loop_integrands",
+    "goal": "Construct the unrenormalized 1-loop integrands for the s, t, and u channel bubble diagrams, explicitly including vertex factors, symmetry factors, and propagator factors of i.",
+    "depends_on": [
+      "lagrangian_and_rules"
+    ]
+  },
+  {
+    "id": "scalar_integral",
+    "goal": "Evaluate the massless scalar 1-loop bubble integral in d = 4 - 2\\epsilon dimensions using dimensional regularization, keeping track of the overall factors of i and \\mu^{2\\epsilon}.",
+    "depends_on": []
+  },
+  {
+    "id": "unrenormalized_loop",
+    "goal": "Combine the evaluated scalar integral with the channel kinematics and vertex factors to assemble the full unrenormalized 1-loop amplitude.",
+    "depends_on": [
+      "loop_integrands",
+      "scalar_integral"
+    ]
+  },
+  {
+    "id": "renormalization",
+    "goal": "Determine the MS-bar counterterm for the 4-point vertex, compute its contribution to the amplitude, and subtract it from the unrenormalized amplitude to obtain the renormalized 1-loop amplitude A_loop.",
+    "depends_on": [
+      "unrenormalized_loop"
+    ]
+  },
+  {
+    "id": "beta_function",
+    "goal": "Extract the beta function beta_c4 from the pole part of the counterterm in the MS-bar scheme.",
+    "depends_on": [
+      "renormalization"
+    ]
+  },
+  {
+    "id": "analytic_structure",
+    "goal": "Apply the Feynman i0 prescription (s -> s+i0, t, u < 0) to the renormalized amplitude, derive the boundary values, and explain the resulting analytic structure and branch cuts in the physical s-channel region.",
+    "depends_on": [
+      "renormalization"
+    ]
+  },
+  {
+    "id": "final_compilation",
+    "goal": "Compile the final expressions for A_tree, A_loop, and beta_c4 into a fenced final block using safe arithmetic syntax, ensuring all intermediate equations are shown for checking.",
+    "depends_on": [
+      "tree_amplitude",
+      "renormalization",
+      "beta_function"
+    ]
+  }
+]
